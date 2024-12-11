@@ -12,8 +12,7 @@ export default function ReceivedContent({ content }: ReceivedContentProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAnimating(false);
-    }, 5000); // Увеличили время анимации до 5 секунд
-
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
