@@ -5,10 +5,10 @@ export interface Session {
   mode: SessionMode;
   createdAt: Date;
   expiresAt: Date;
-  emoji: string;
+  emoji?: string;
   content?: string;
-  qrExpiry?: Date;     // Время истечения QR кода
-  contentExpiry?: Date; // Время истечения контента
+  qrExpiry?: Date;
+  contentExpiry?: Date;
 }
 
 export interface CreateSessionResponse {

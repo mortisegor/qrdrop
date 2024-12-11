@@ -139,8 +139,9 @@ class SessionStore {
   private cleanupEmojis(): void {
     const activeEmojis = new Set(
       Array.from(this.sessions.values())
-        .filter(s => new Date() < s.expiresAt)
+        .filter(s => s.mode === 'receive' && new Date() < s.expiresAt)
         .map(s => s.emoji)
+        .filter((emoji): emoji is string => emoji !== undefined)
     );
     this.usedEmojis = activeEmojis;
   }

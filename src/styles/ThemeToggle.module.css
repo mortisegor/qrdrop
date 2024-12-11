@@ -1,33 +1,24 @@
-.themeToggle {
+.toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   width: 40px;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 50%;
   border: none;
-  background-color: var(--secondary-bg);
+  background: var(--bg-color);
   color: var(--text-color);
+  font-size: 20px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: all 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-.themeToggle:active {
+.toggle:hover {
+  transform: scale(1.1);
+}
+
+.toggle:active {
   transform: scale(0.95);
-}
-
-.themeToggle svg {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-}
-
-.themeToggle:hover svg {
-  transform: rotate(15deg);
 } 
