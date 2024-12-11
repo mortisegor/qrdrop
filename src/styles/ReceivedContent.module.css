@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.contentBox {
+  position: relative;
+  background: var(--content-bg);
+  border: 1px solid var(--content-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  padding-right: 5rem;
+  min-height: 100px;
+  max-height: 70vh;
+  overflow: hidden;
+  box-shadow: var(--modal-shadow);
+}
+
+.content {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  max-height: 100%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.waveEffect {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    var(--wave-color) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.animating .content {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animating .waveEffect {
+  animation: wave 5s ease-out;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.copyButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--copy-button-bg);
+  color: var(--copy-button-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.copyButton:hover {
+  background: var(--copy-button-hover);
+}
+
+.content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: var(--progress-bg);
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: var(--secondary-text);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
+}
+
+[data-theme='dark'] .contentBox {
+  background: var(--content-bg);
+  border-color: var(--content-border);
+}
+ 

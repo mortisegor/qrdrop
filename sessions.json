@@ -1,0 +1,29 @@
+{
+  "da60bef8-dc52-4ad2-ae7a-c1180be7f8c2": {
+    "id": "da60bef8-dc52-4ad2-ae7a-c1180be7f8c2",
+    "mode": "receive",
+    "createdAt": "2024-12-11T16:33:35.360Z",
+    "expiresAt": "2024-12-11T16:48:35.360Z",
+    "emoji": "🦊",
+    "qrExpiry": "2024-12-11T16:35:35.406Z"
+  },
+  "dacd8618-a52b-4fd5-a20d-36a631585222": {
+    "id": "dacd8618-a52b-4fd5-a20d-36a631585222",
+    "mode": "send",
+    "createdAt": "2024-12-11T16:43:56.488Z",
+    "expiresAt": "2024-12-11T16:58:56.488Z",
+    "emoji": "🐳",
+    "qrExpiry": "2024-12-11T16:44:56.488Z",
+    "content": "попрыпшг",
+    "contentExpiry": "2024-12-11T16:46:59.097Z"
+  },
+  "5184f39d-8f2c-43c3-8837-b64a3bfc9691": {
+    "id": "5184f39d-8f2c-43c3-8837-b64a3bfc9691",
+    "mode": "transfer",
+    "createdAt": "2024-12-11T16:43:59.097Z",
+    "expiresAt": "2024-12-11T16:48:59.097Z",
+    "emoji": "🐳",
+    "content": "попрыпшг",
+    "contentExpiry": "2024-12-11T16:46:59.097Z"
+  }
+}

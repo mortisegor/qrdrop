@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.textArea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.sendButton {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sendButton:disabled {
+  background: var(--disabled-color);
+  cursor: not-allowed;
+} 

@@ -1,0 +1,194 @@
+/* Подключаем шрифт JetBrains Mono через Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Светлая тема */
+  --bg-color: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --text-color: #1a1a1a;
+  --secondary-text: #4a5568;
+  --accent-color: #0066ff;
+  --accent-rgb: 0, 102, 255;
+  --accent-light: #3385ff;
+  --divider-color: #e2e8f0;
+  --error-color: #dc2626;
+  --success-color: #059669;
+  
+  /* Компоненты */
+  --content-bg: #ffffff;
+  --content-border: #e2e8f0;
+  --copy-button-bg: #0066ff;
+  --copy-button-text: #ffffff;
+  --copy-button-hover: #0052cc;
+  --success-text: #059669;
+  --timer-text: #4a5568;
+  --wave-color: rgba(0, 102, 255, 0.15);
+  --progress-bg: #e2e8f0;
+  --progress-fill: #0066ff;
+  
+  /* QR код */
+  --qr-bg: #ffffff;
+  --qr-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  /* Добавляем новые переменные для модального окна */
+  --modal-overlay: rgba(0, 0, 0, 0.3);
+  --modal-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --hover-bg: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] {
+  /* Темная тема */
+  --bg-color: #000000;
+  --secondary-bg: #111111;
+  --text-color: #ffffff;
+  --secondary-text: #a0aec0;
+  --accent-color: #3385ff;
+  --accent-rgb: 51, 133, 255;
+  --accent-light: #66a3ff;
+  --divider-color: #222222;
+  --error-color: #f87171;
+  --success-color: #34d399;
+
+  /* Компоненты */
+  --content-bg: #111111;
+  --content-border: #222222;
+  --copy-button-bg: #3385ff;
+  --copy-button-text: #ffffff;
+  --copy-button-hover: #66a3ff;
+  --success-text: #34d399;
+  --timer-text: #a0aec0;
+  --wave-color: rgba(51, 133, 255, 0.2);
+  --progress-bg: #222222;
+  --progress-fill: #3385ff;
+  
+  /* QR код */
+  --qr-bg: #111111;
+  --qr-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18);
+  
+  /* Темная тема для модального окна */
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --modal-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Обновим стили для QR контейнера */
+.qrContainer {
+  background: var(--qr-bg);
+  box-shadow: var(--qr-shadow);
+  border: 1px solid var(--divider-color);
+}
+
+/* Улучшим читаемость текста */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+}
+
+/* Улучшим контраст для выделения текста */
+::selection {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  opacity: 0.9;
+}
+
+/* Улучшим стили скроллбара */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-text);
+  border: 3px solid var(--bg-color);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+  border-radius: 8px;
+}
+
+/* Плавные переходы при смене темы */
+* {
+  transition: background-color 0.3s ease, 
+              color 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#__next {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+button {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+textarea {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Улучшаем скроллбар для WebKit браузеров */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-text);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
+}
+
+/* Медиа-запрос для автоматического определения темы */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg-color: #000000;
+    --secondary-bg: #1a1a1a;
+    --text-color: #ffffff;
+    --secondary-text: #999999;
+    --accent-color: #0A84FF;
+    --accent-rgb: 10, 132, 255;  /* RGB версия цвета акцента */
+    --accent-light: #409CFF;
+    --divider-color: #333333;
+    --error-color: #FF453A;
+    --success-color: #33cc33;
+    --button-bg: rgba(26, 26, 26, 0.9);
+    --button-text: #ffffff;
+  }
+} 
