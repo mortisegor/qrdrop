@@ -5,10 +5,6 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
-  images: {
-    domains: ['localhost'],
-    unoptimized: true
-  },
   poweredByHeader: false,
   async headers() {
     return [
